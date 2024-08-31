@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Chapter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        #sandalsImage {
+            width: 300px;
+            margin: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #message {
+            display: none;
+            font-size: 18px;
+            color: green;
+            margin-top: 20px;
+        }
+
+        #sandalsSection {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="sandalsSection">
+        <h1>Marianne Needs New Sandals</h1>
+        <img id="sandalsImage" src="https://ebandive.com.au/cdn/shop/files/2534501.jpg?v=1692085819&width=2048" alt="Sandals">
+        <p>Buy new sandals for Marianne's diseased feet - $50</p>
+        <button id="buyButton">Buy Sandals</button>
+    </div>
+    <div id="message">
+        Marianne is happy!<br>
+        <button id="retryButton">Retry</button>
+    </div>
+
+    <script>
+        const buyButton = document.getElementById("buyButton");
+        const message = document.getElementById("message");
+        const retryButton = document.getElementById("retryButton");
+        const sandalsSection = document.getElementById("sandalsSection");
+
+        buyButton.addEventListener("click", function() {
+            // Hide the sandals section and show the happy message and retry button
+            sandalsSection.style.display = 'none';
+            message.style.display = 'block';
+        });
+
+        retryButton.addEventListener("click", function() {
+            // Redirect back to train page to loop
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
